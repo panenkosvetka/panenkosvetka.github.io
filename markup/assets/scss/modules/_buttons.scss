@@ -1,0 +1,52 @@
+.btn{
+	display: inline-block;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	font-weight: 700;
+	background: transparent;
+	border-radius: $border-radius-base;
+	&:hover{
+		text-decoration: none;
+	}
+	&-brand{
+		border: 1px solid $btn-border;
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+		&:after {
+			background: $text-inverse-color;
+			content: "";
+			height: 155px;
+			left: -75px;
+			opacity: .2;
+			position: absolute;
+			top: -50px;
+			transform: rotate(35deg);
+			transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+			width: 50px;
+			z-index: -10;
+		}
+		&:hover{
+			&:after {
+				left: 120%;
+				transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+			}
+		}
+		&.active,
+		&:focus{
+			background: rgba($text-inverse-color, .8);
+			border: 1px solid $text-inverse-color;
+			color: $text-color;
+		}
+	}
+	&-light{
+		color: $text-inverse-color;
+		&:hover,
+		&.active{
+			color: $text-inverse-color;
+		}
+	}
+	&-lg{
+		padding: 15px 25px;
+	}
+}

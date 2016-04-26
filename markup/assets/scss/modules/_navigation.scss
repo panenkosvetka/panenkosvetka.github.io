@@ -1,0 +1,150 @@
+.main-nav{
+	.opener-menu{
+		display: block;
+		position: absolute;
+		overflow: hidden;
+		padding: 0;
+		width: 31px;
+		height: 22px;
+		font-size: 0;
+		text-indent: -9999px;
+		box-shadow: none;
+		border: none;
+		cursor: pointer;
+		transition: background 0.3s;
+		bottom: 100%;
+		right: 15px;
+		background: none;
+		&:focus{
+			outline: none;
+		}
+		span{
+			display: block;
+			position: absolute;
+			top: 10px;
+			left: 3px;
+			right: 1px;
+			height: 3px;
+			background: $opener-color;
+			box-shadow: none;
+			&:before,
+			&:after{
+				position: absolute;
+				display: block;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				background-color: $opener-color;
+				content: '';
+			}
+			&:before{
+				top: -8px;
+				box-shadow: 0px 1px 0 0px #aaa;
+			}
+			&:after{
+				bottom: -7px;
+				box-shadow: 0px -1px 0 0px #aaa;
+			}
+			@media screen and (min-width: 769px){
+				box-shadow: 0px -1px 0 0px #aaa;
+			}
+		}
+	}
+	.opener-x{
+		span{
+			transition: background 0.3s 0s;
+			&:before,
+			&:after{
+				transition-duration: 0.3s, 0.3s;
+				transition-delay: 0s, 0s;
+			}
+			&:before{
+				transition-property: top, transform;
+			}
+			&:after{
+				transition-property: bottom, transform;
+			}
+		}
+		&.active{
+			span{
+				background: none;
+				box-shadow: none;
+				&:before,
+				&:after{
+					transition-delay: 0s, 0s;
+				}
+				&:before{
+					top: 0;
+					transform: rotate(45deg);
+				}
+				&:after{
+					bottom: 0;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+		@media screen and (min-width: 960px){
+			display: none;
+		}
+	}
+	.nav{
+		display: none;		
+		flex-direction: column;
+		li{
+			width: 100%;
+			text-align: center;
+			a{
+				display: block;
+				padding: 15px 20px;
+				position: relative;
+				overflow: hidden;
+				&:before{
+					content: "";
+					top: 0;
+					position: absolute;
+					bottom: 0;
+					left: -10px;
+					right: -10px;
+					background: $text-color;
+					transition: transform 0.5s;
+					z-index: -1;
+					transform: skew(15deg) translateX(-105%);
+				}
+				&:hover{
+					color: $text-inverse-color;
+					text-decoration: none;
+					&:before{
+						transform: skew(15deg) translateX(0);
+					}
+				}
+			}
+		}
+		@media screen and (min-width: 960px){
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			flex-direction: row;
+			li{
+				width: auto;
+				a{
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+.footer-nav{
+	display: flex;
+	flex-wrap: wrap;
+	li{
+		width: 33.33%;
+		margin-bottom: 20px;
+		a{
+			color: $text-inverse-color;
+			transition: all 0.25s;
+			&:hover{
+				color: $brand-color;
+			}
+		}
+	}
+}

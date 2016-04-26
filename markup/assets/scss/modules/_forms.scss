@@ -1,0 +1,41 @@
+.form{
+	background: rgba($text-color, .5);
+	border-radius: $border-radius-base;
+	text-align: center;
+	padding: 40px 0;
+}
+.form-group{
+	margin-bottom: 20px;
+}
+.form-control{
+	transition: all 0.5s;
+	@include color-shadow($form-color-dark, 18px, 16px);
+	width: 80%;
+	padding: 10px 15px;
+}
+.textarea-group{
+	position: relative;
+	label{
+		width: 100%;
+		opacity: 1;
+		position: absolute;
+		top: 10px;
+		left: 0;
+		padding-left: 13%;
+		transition: opacity 0.25s;
+		text-align: left;
+	}
+	textarea{
+		min-height: 175px;
+		text-align: justify;
+		resize: none;
+		overflow: hidden;
+		position: relative;
+		&:focus{
+			&~label{
+				opacity: 0;
+				z-index: -1;
+			}
+		}
+	}
+}

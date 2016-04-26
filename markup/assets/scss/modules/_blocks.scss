@@ -1,0 +1,177 @@
+.header{
+	padding: 20px 0 10px 0;
+	.logo{
+		display: inline-block;
+		width: 40%;
+		@media screen and (min-width: 960px){
+			width: 70%;
+		}
+	}
+}
+.block{
+	&-shadow{
+		position: relative;
+		color: $text-inverse-color;
+		&-inner{
+			position: relative;
+			z-index: 11;
+		}
+		&:before{
+			content: "";
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: absolute;
+			background: rgba(0,0,0,.68);
+			z-index: 10;
+		}
+	}
+	&-gallery{
+		padding: 0;
+		.item{
+			position: relative;
+			height: 40vh;
+			@media screen and (min-width: 768px){
+				height: 60vh;
+			}
+			@media screen and (min-width: 960px){
+				height: 80vh;
+			}
+		}
+		&-caption{
+			position: absolute;
+			z-index: 11;
+			width: 45%;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 20%;
+		}
+	}
+	&-about{
+		padding-bottom: 40px;
+		@media screen and (min-width: 768px){
+			padding: 20px 0 60px 0;
+		}
+		.page-header{
+			margin-bottom: 40px;
+		}
+		.info-block{
+			margin-bottom: 40px;
+			
+		}
+		.list{
+			margin-top: 22px;
+		}
+	}
+	&-credo{
+		background: url("../images/img02.jpg") no-repeat;
+		min-height: 30vh;
+		background-size: cover;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 20px 0 0 0;
+		@media screen and (min-width: 960px){
+			padding: 0;
+		}
+		.number{
+			margin-bottom: 20px;
+			@media screen and (min-width: 960px){
+				margin: 0;
+			}
+		}
+	}
+	&-seo,
+	&-smm{
+		@media screen and (min-width: 768px){
+			padding: 20px 0 60px 0;
+		}
+		.page-header{
+			margin-bottom: 30px;
+		}
+		.fancybox{
+			display: inline-block;
+			margin-bottom: 20px;
+			box-shadow: 3px 4px 4px 0px rgba(0,0,0,.5);
+			position: relative;
+			&:before{
+				content: "";
+				position: absolute;
+				top: 5px;
+				bottom: 5px;
+				left: 5px;
+				right: 5px;
+				border: 1px solid $text-inverse-color;
+			}
+		}
+	}
+	&-quote{
+		background: url("../images/img03.jpg") no-repeat;
+		min-height: 30vh;
+		background-size: cover;
+		@media screen and (min-width: 768px){
+			padding: 20px 0 60px 0;
+		}
+		.quote{
+			max-width: 60%;
+			margin: 0 auto;
+			padding: 40px 0;
+			position: relative;
+			&:before{
+				content: "“";
+				position: absolute;
+				font-size: 120px;
+				top: 0;
+				right: 100%;
+				opacity: 0.5;
+				color: rgba($brand-color, .65)
+			}
+			blockquote{
+				font-size: $font-size-h5;
+				margin-bottom: 15px;
+			}
+			cite{
+				display: block;
+				text-align: right;
+				color: $brand-color;
+			}
+		}
+	}
+	&-wtf{
+		padding: 40px 0;
+		background: url("../images/img01.jpg") no-repeat;
+		min-height: 30vh;
+		background-size: cover;
+		.block-stick-content{
+			padding-left: 60px;
+		}
+	}
+	&-contacts{
+		@media screen and (min-width: 768px){
+			padding: 20px 0 60px 0;
+		}
+		.block-stick{
+			@media screen and (min-width: 1240px){
+				margin-top: 40px;
+			}
+		}
+	}
+}
+.footer{
+	background: url("../images/bg-footer.png");
+	padding: 40px 0;
+	color: $text-inverse-color;
+	&-inner{
+		position: relative;
+		margin-bottom: 20px;
+		&:after{
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			border-top: 1px solid $text-inverse-color;
+		}
+	}
+}
